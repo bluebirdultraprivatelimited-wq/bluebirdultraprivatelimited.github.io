@@ -1,401 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#102b55">
-  <meta name="description" content="Blue Bird Ultra Private Limited-এর চাকরির বিজ্ঞপ্তি, যোগ্যতা, বেতন ও আবেদনের নিয়ম দেখুন।">
-  <title>Blue Bird Ultra Private Limited | চাকরির বিজ্ঞপ্তি</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b52">
+  <meta name="description" content="Blue Bird Ultra Private Limited — সর্বশেষ চাকরির বিজ্ঞপ্তি খুঁজুন এবং আপনার ক্যারিয়ারের পরবর্তী ধাপ শুরু করুন।">
+  <title>Blue Bird Ultra Private Limited | চাকরির পোর্টাল</title>
   <style>
-    :root {
-      --navy: #102b55;
-      --blue: #1769d2;
-      --cyan: #eaf5ff;
-      --green: #16834a;
-      --text: #182538;
-      --muted: #65748a;
-      --bg: #f5f8fc;
-      --white: #fff;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: system-ui, "Noto Sans Bengali", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-    }
-    a { text-decoration: none; }
-    button, input, select { font: inherit; }
-    .container { width: min(1100px, 92%); margin: auto; }
-
-    header {
-      background: var(--white);
-      border-bottom: 1px solid #e6edf5;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; }
-    .logo {
-      width: 46px; height: 46px; border-radius: 13px;
-      display: grid; place-items: center;
-      color: white; background: var(--navy);
-      font-size: 20px; font-weight: 900;
-    }
-    .brand-name { color: var(--navy); font-weight: 850; line-height: 1.35; }
-    .brand-name small { display: block; font-size: 11px; letter-spacing: 1px; }
-    .nav-links { display: flex; gap: 22px; align-items: center; }
-    .nav-links a { color: var(--text); font-size: 14px; font-weight: 650; }
-    .nav-links a:hover { color: var(--blue); }
-    .menu-btn {
-      display: none; border: 0; background: var(--cyan);
-      padding: 8px 12px; border-radius: 9px; color: var(--navy);
-    }
-
-    .hero {
-      background: linear-gradient(125deg, #102b55, #1769d2);
-      color: white; padding: 68px 0 62px;
-    }
-    .hero-content { max-width: 760px; }
-    .eyebrow {
-      display: inline-block; padding: 5px 12px; border-radius: 30px;
-      background: #ffffff1c; border: 1px solid #ffffff35;
-      font-size: 13px;
-    }
-    h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.3; margin: 18px 0 12px; }
-    .hero p { color: #e3edff; max-width: 620px; margin: 0 0 25px; }
-    .btn {
-      display: inline-flex; justify-content: center; align-items: center;
-      gap: 8px; padding: 11px 18px; border-radius: 10px;
-      font-weight: 750; border: 0; cursor: pointer;
-    }
-    .btn-white { color: var(--navy); background: white; }
-    .btn-blue { color: white; background: var(--blue); }
-    .btn-green { color: white; background: var(--green); }
-    .btn-light { color: var(--navy); background: var(--cyan); }
-
-    .trust-row {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 14px; margin-top: -25px; position: relative;
-    }
-    .trust-item {
-      background: white; border: 1px solid #e8eef6;
-      border-radius: 14px; padding: 17px;
-      box-shadow: 0 7px 22px #18395d09;
-    }
-    .trust-item strong { display: block; color: var(--navy); }
-    .trust-item span { color: var(--muted); font-size: 13px; }
-
-    section { padding: 54px 0; }
-    .section-head { margin-bottom: 24px; }
-    .section-head h2 { margin: 0 0 5px; font-size: 27px; color: var(--navy); }
-    .section-head p { margin: 0; color: var(--muted); }
-
-    .filters {
-      display: grid; grid-template-columns: 1fr 220px;
-      gap: 12px; margin-bottom: 22px;
-    }
-    .filters input, .filters select {
-      width: 100%; padding: 13px 14px; border-radius: 10px;
-      border: 1px solid #dce5ef; background: white; outline: none;
-    }
-    .filters input:focus, .filters select:focus { border-color: var(--blue); }
-
-    .job-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .job-card {
-      background: white; border: 1px solid #e4ebf3;
-      border-radius: 16px; padding: 22px;
-      box-shadow: 0 6px 20px #1b365408;
-    }
-    .job-top { display: flex; justify-content: space-between; gap: 12px; }
-    .job-card h3 { color: var(--navy); font-size: 20px; margin: 0 0 7px; }
-    .tag {
-      align-self: flex-start; color: var(--blue);
-      background: var(--cyan); border-radius: 7px;
-      padding: 3px 9px; font-size: 12px; white-space: nowrap;
-    }
-    .job-meta { color: var(--muted); font-size: 14px; margin: 13px 0; }
-    .job-meta div { margin: 4px 0; }
-    .job-card p { font-size: 14px; }
-    .job-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
-    .job-actions .btn { font-size: 13px; padding: 9px 12px; }
-    .notice {
-      margin-top: 22px; padding: 15px;
-      background: #fff8e8; border: 1px solid #f1dfad;
-      border-radius: 11px; color: #6c5317; font-size: 13px;
-    }
-    .empty {
-      display: none; text-align: center; padding: 35px;
-      color: var(--muted); background: white; border-radius: 14px;
-    }
-
-    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: start; }
-    .about-box, .contact-box {
-      padding: 25px; border-radius: 16px; background: white;
-      border: 1px solid #e4ebf3;
-    }
-    .about-box h3, .contact-box h3 { color: var(--navy); margin-top: 0; }
-    .check-list { padding-left: 20px; }
-    .check-list li { margin: 8px 0; }
-    .contact-box p { color: var(--muted); }
-
-    footer { background: #0b1e3b; color: white; padding: 30px 0; }
-    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    footer p { color: #d0dced; margin: 5px 0; font-size: 13px; }
-    footer a { color: white; }
-
-    @media (max-width: 700px) {
-      .nav { min-height: 68px; }
-      .menu-btn { display: block; }
-      .nav-links {
-        display: none; position: absolute; left: 4%; right: 4%; top: 70px;
-        background: white; border: 1px solid #e5edf6;
-        border-radius: 12px; padding: 15px;
-        flex-direction: column; align-items: stretch; gap: 12px;
-        box-shadow: 0 10px 30px #102b5515;
-      }
-      .nav-links.open { display: flex; }
-      .hero { padding: 48px 0; }
-      .trust-row { grid-template-columns: 1fr; margin-top: 18px; }
-      .filters, .job-grid, .about-grid { grid-template-columns: 1fr; }
-      section { padding: 38px 0; }
-      .job-card { padding: 18px; }
-    }
+    :root{--navy:#102b52;--navy2:#173d70;--blue:#2463eb;--sky:#eaf2ff;--ink:#17253c;--muted:#64748b;--line:#e4eaf2;--bg:#f6f8fc;--white:#fff;--green:#13805d;--shadow:0 16px 45px rgba(16,43,82,.10)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali","Hind Siliguri",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{width:min(1120px,92%);margin:auto}
+    .topline{background:#0b1f3d;color:#dbe8fb;font-size:13px;padding:8px 0}.topline .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}.brand{display:flex;align-items:center;gap:12px;min-width:0}.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#2463eb,#102b52);display:grid;place-items:center;color:white;font-weight:900;font-size:22px;box-shadow:0 8px 20px #2463eb35}.brand-title{font-weight:850;letter-spacing:.2px;color:var(--navy);line-height:1.2}.brand-sub{font-size:11px;color:var(--muted);letter-spacing:1.1px;margin-top:4px}.navlinks{display:flex;align-items:center;gap:24px;font-size:14px;color:#34445d}.navlinks a:hover{color:var(--blue)}.nav-cta{background:var(--blue);color:white!important;padding:11px 16px;border-radius:11px;font-weight:700}
+    .hero{background:radial-gradient(circle at 80% 20%,#2b5d9a 0,transparent 34%),linear-gradient(120deg,#0b1f3d,#153f75);color:#fff;overflow:hidden}.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:68px 0 72px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff45;background:#ffffff12;border-radius:999px;padding:7px 12px;font-size:13px;color:#dceaff}.dot{width:7px;height:7px;border-radius:50%;background:#69e0b2}.hero h1{font-size:clamp(31px,4.3vw,52px);line-height:1.2;letter-spacing:-.8px;margin:20px 0 16px}.hero p{color:#d3e0f4;font-size:17px;max-width:590px;margin:0 0 26px}.searchbox{display:flex;gap:9px;background:white;border-radius:16px;padding:8px;box-shadow:0 18px 45px #00132d4d;max-width:650px}.searchbox input{border:0;outline:0;min-width:0;flex:1;padding:12px;color:var(--ink);background:transparent}.searchbox button{border:0;background:var(--blue);color:white;border-radius:11px;padding:12px 20px;font-weight:750;cursor:pointer}.hero-note{font-size:12px!important;color:#b9cde8!important;margin:13px 0 0!important}.hero-art{position:relative;min-height:280px;display:grid;place-items:center}.orbit{width:min(330px,90%);aspect-ratio:1;border-radius:50%;border:1px solid #ffffff32;display:grid;place-items:center;background:radial-gradient(circle,#ffffff13,transparent 66%);position:relative}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #ffffff20;border-radius:50%;inset:25px}.orbit:after{inset:55px}.art-card{position:relative;z-index:1;width:230px;padding:22px;background:#fff;color:var(--ink);border-radius:20px;box-shadow:0 20px 60px #00132d55;transform:rotate(-3deg)}.art-icon{height:45px;width:45px;border-radius:13px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:23px}.art-card strong{display:block;margin-top:14px;font-size:17px}.art-card small{color:var(--muted)}.art-chip{display:inline-block;background:#e8f7f1;color:var(--green);padding:5px 9px;border-radius:8px;font-size:11px;margin-top:13px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-28px;position:relative;z-index:2}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:18px 20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:13px}.stat-icon{width:42px;height:42px;border-radius:12px;background:var(--sky);display:grid;place-items:center;font-size:20px}.stat b{display:block;color:var(--navy);font-size:19px}.stat span{font-size:12px;color:var(--muted)}
+    section{padding:60px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:24px}.kicker{font-size:12px;font-weight:800;letter-spacing:1.4px;color:var(--blue);text-transform:uppercase}.section-head h2{font-size:clamp(24px,3vw,33px);margin:5px 0 0;color:var(--navy);line-height:1.25}.section-head p{color:var(--muted);margin:8px 0 0;font-size:14px}.filterbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.filterbar input,.filterbar select{border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px 13px;color:var(--ink);outline-color:var(--blue)}.filterbar input{flex:1;min-width:180px}.filterbar select{min-width:150px}.jobs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.job{background:white;border:1px solid var(--line);border-radius:17px;padding:21px;transition:.2s;box-shadow:0 4px 16px #102b5208}.job:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#c9d9f7}.job-top{display:flex;align-items:start;gap:13px}.company-mark{width:48px;height:48px;flex:none;border-radius:13px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:22px;font-weight:800}.job h3{margin:0 0 3px;font-size:18px;color:var(--navy)}.company{color:var(--muted);font-size:13px}.newtag{margin-left:auto;background:#e8f7f1;color:var(--green);font-size:11px;padding:4px 8px;border-radius:7px;white-space:nowrap}.job-desc{font-size:13px;color:#53637b;margin:15px 0}.job-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.job-meta span{font-size:12px;background:#f4f7fb;color:#44546a;padding:6px 9px;border-radius:8px}.job-bottom{border-top:1px solid #eef1f6;padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px}.deadline{font-size:12px;color:var(--muted)}.apply{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);color:white;padding:9px 13px;border-radius:9px;font-size:13px;font-weight:700}.empty{grid-column:1/-1;text-align:center;padding:38px 18px;border:1px dashed #cbd5e1;border-radius:16px;color:var(--muted);background:white}.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.category{background:white;border:1px solid var(--line);padding:20px;border-radius:15px;transition:.2s}.category:hover{border-color:#b9cdf7;transform:translateY(-2px)}.category .emoji{width:43px;height:43px;border-radius:12px;background:var(--sky);display:grid;place-items:center;font-size:21px}.category h3{font-size:15px;margin:12px 0 3px;color:var(--navy)}.category p{font-size:12px;color:var(--muted);margin:0}
+    .how{background:#eef4fc}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.step{background:white;border:1px solid #e0e8f4;border-radius:16px;padding:22px}.step-no{width:36px;height:36px;border-radius:11px;background:var(--navy);color:white;display:grid;place-items:center;font-weight:800}.step h3{font-size:16px;margin:14px 0 5px;color:var(--navy)}.step p{font-size:13px;color:var(--muted);margin:0}.banner{background:linear-gradient(115deg,#123260,#2463b8);border-radius:22px;padding:32px;color:white;display:flex;justify-content:space-between;align-items:center;gap:20px}.banner h2{margin:0;font-size:clamp(22px,3vw,30px)}.banner p{margin:7px 0 0;color:#d5e5ff;font-size:14px}.banner a{background:white;color:var(--navy);padding:12px 17px;border-radius:11px;font-weight:800;white-space:nowrap}
+    footer{background:#0b1f3d;color:#d4e0f1;padding:42px 0 20px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}.footer-brand{color:white;font-weight:850;font-size:18px}.footer-grid p,.footer-grid a{font-size:13px;color:#b7c8df}.footer-grid h3{color:white;font-size:14px;margin:0 0 12px}.footer-links{display:grid;gap:7px}.copyright{border-top:1px solid #ffffff20;margin-top:30px;padding-top:17px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#91a8c7;font-size:12px}
+    .notice{font-size:12px;color:#64748b;margin-top:18px}
+    @media(max-width:760px){.nav{min-height:68px}.navlinks{gap:12px}.navlinks a:not(.nav-cta){display:none}.hero-inner{grid-template-columns:1fr;padding:48px 0 58px}.hero-art{min-height:210px}.orbit{width:220px}.art-card{width:200px;padding:17px}.stats{grid-template-columns:1fr;gap:9px;margin-top:-20px}.stat{padding:13px 15px}.jobs{grid-template-columns:1fr}.categories{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.banner{align-items:start;flex-direction:column;padding:25px}.footer-grid{grid-template-columns:1fr;gap:20px}section{padding:45px 0}.searchbox{gap:3px}.searchbox input{padding:10px;font-size:14px}.searchbox button{padding:10px 12px;font-size:13px}}
+    @media(max-width:390px){.brand-title{font-size:13px}.brand-sub{font-size:9px}.logo{width:40px;height:40px}.categories{gap:9px}.category{padding:14px}.newtag{display:none}.job{padding:17px}}
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav">
-    <a class="brand" href="#home" aria-label="হোম">
-      <div class="logo">BB</div>
-      <div class="brand-name">
-        BLUE BIRD ULTRA
-        <small>PRIVATE LIMITED</small>
-      </div>
+  <div class="topline"><div class="wrap"><span>আপনার ক্যারিয়ারের পরবর্তী ধাপ শুরু হোক</span><span>বিশ্বস্ত চাকরির তথ্য • সহজ আবেদন</span></div></div>
+  <header><div class="wrap nav">
+    <a class="brand" href="#" aria-label="Blue Bird হোম">
+      <div class="logo">B</div><div><div class="brand-title">BLUE BIRD</div><div class="brand-sub">ULTRA PRIVATE LIMITED</div></div>
     </a>
-    <button class="menu-btn" id="menuBtn" aria-label="মেনু খুলুন">☰ মেনু</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">হোম</a>
-      <a href="#jobs">সকল চাকরি</a>
-      <a href="#about">আমাদের সম্পর্কে</a>
-      <a href="#contact">যোগাযোগ</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <span class="eyebrow">Recruitment • Manpower • Security</span>
-      <h1>আপনার পছন্দের চাকরি খুঁজে নিন</h1>
-      <p>
-        চাকরির বিজ্ঞপ্তি, বেতন, ডিউটির সময়, যোগ্যতা ও কর্মস্থলের তথ্য দেখুন।
-        আপনার উপযুক্ত সুযোগ সম্পর্কে জানতে আমাদের সঙ্গে যোগাযোগ করুন।
-      </p>
-      <a class="btn btn-white" href="#jobs">চাকরি দেখুন →</a>
-    </div>
-  </section>
-
-  <div class="container trust-row">
-    <div class="trust-item">
-      <strong>চাকরির তথ্য</strong>
-      <span>পদ, বেতন ও কর্মস্থলের বিবরণ</span>
-    </div>
-    <div class="trust-item">
-      <strong>সহজ আবেদন</strong>
-      <span>WhatsApp-এর মাধ্যমে যোগাযোগ</span>
-    </div>
-    <div class="trust-item">
-      <strong>নিয়োগ সহায়তা</strong>
-      <span>আবেদনের নিয়ম ও প্রয়োজনীয় তথ্য</span>
-    </div>
-  </div>
-
-  <section id="jobs">
-    <div class="container">
-      <div class="section-head">
-        <h2>সাম্প্রতিক চাকরির বিজ্ঞপ্তি</h2>
-        <p>বিস্তারিত পড়ুন এবং আবেদন করার আগে শর্তাবলি যাচাই করুন।</p>
+    <nav class="navlinks" aria-label="প্রধান মেনু"><a href="#jobs">চাকরি খুঁজুন</a><a href="#categories">ক্যাটাগরি</a><a href="#how">আবেদনের নিয়ম</a><a class="nav-cta" href="#jobs">বিজ্ঞপ্তি দেখুন ↗</a></nav>
+  </div></header>
+  <main>
+    <section class="hero"><div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> চাকরির নতুন সুযোগ এক জায়গায়</span>
+        <h1>আপনার যোগ্যতা,<br>আপনার পরবর্তী সুযোগ।</h1>
+        <p>Blue Bird Ultra Private Limited-এর চাকরির পোর্টালে বিভিন্ন চাকরির বিজ্ঞপ্তি দেখুন, প্রয়োজনীয় তথ্য জানুন এবং আবেদন প্রক্রিয়া সহজ করুন।</p>
+        <form class="searchbox" id="heroSearch"><input id="heroQuery" aria-label="চাকরি খুঁজুন" placeholder="পদের নাম, প্রতিষ্ঠান বা কর্মস্থল লিখুন"><button type="submit">চাকরি খুঁজুন</button></form>
+        <p class="hero-note">সঠিক তথ্য যাচাই করে আবেদন করুন। কোনো চাকরির জন্য অর্থ লেনদেনের আগে সতর্ক থাকুন।</p>
       </div>
-
-      <div class="filters">
-        <input id="searchInput" type="search" placeholder="পদের নাম বা কর্মস্থল লিখুন..." aria-label="চাকরি খুঁজুন">
-        <select id="categoryFilter" aria-label="চাকরির বিভাগ">
-          <option value="">সকল বিভাগ</option>
-          <option value="শোরুম">শোরুম</option>
-          <option value="সিকিউরিটি">সিকিউরিটি</option>
-          <option value="সুপার শপ">সুপার শপ</option>
-        </select>
-      </div>
-
-      <div class="job-grid" id="jobGrid"></div>
-      <div class="empty" id="emptyState">আপনার অনুসন্ধানের সঙ্গে মেলে এমন চাকরি পাওয়া যায়নি।</div>
-
-      <div class="notice">
-        গুরুত্বপূর্ণ: এই ওয়েবসাইটের চাকরির কার্ডগুলো নমুনা হিসেবে দেওয়া হয়েছে।
-        প্রকৃত নিয়োগ বিজ্ঞপ্তি প্রকাশ করার আগে সঠিক তথ্য দিয়ে আপডেট করুন।
-        আবেদন করার আগে বেতন, কর্মস্থল, দায়িত্ব ও অন্যান্য শর্ত নিশ্চিত করুন।
-      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit"><div class="art-card"><div class="art-icon">✦</div><strong>নতুন সুযোগের শুরু</strong><small>আপনার দক্ষতার সঙ্গে মানানসই চাকরি খুঁজুন</small><span class="art-chip">ক্যারিয়ার • উন্নতি • সম্ভাবনা</span></div></div></div>
+    </div></section>
+    <div class="wrap stats">
+      <div class="stat"><div class="stat-icon">⌕</div><div><b>সহজ অনুসন্ধান</b><span>পছন্দের বিজ্ঞপ্তি খুঁজুন</span></div></div>
+      <div class="stat"><div class="stat-icon">▤</div><div><b>বিস্তারিত তথ্য</b><span>শর্ত ও সময়সীমা জানুন</span></div></div>
+      <div class="stat"><div class="stat-icon">↗</div><div><b>আবেদনের লিংক</b><span>সঠিক পথে আবেদন করুন</span></div></div>
     </div>
-  </section>
-
-  <section id="about" style="background:#edf4fc">
-    <div class="container about-grid">
-      <div class="about-box">
-        <h3>Blue Bird Ultra Private Limited সম্পর্কে</h3>
-        <p>
-          Blue Bird Ultra Private Limited একটি রিক্রুটমেন্ট ও সিকিউরিটি
-          সেবাকেন্দ্রিক প্রতিষ্ঠান হিসেবে চাকরিপ্রার্থী এবং নিয়োগদাতাদের
-          মধ্যে যোগাযোগ সহজ করার লক্ষ্যে কাজ করে।
-        </p>
-        <ul class="check-list">
-          <li>চাকরির বিজ্ঞপ্তি ও প্রয়োজনীয় তথ্য প্রকাশ</li>
-          <li>আবেদন প্রক্রিয়া সম্পর্কে প্রাথমিক নির্দেশনা</li>
-          <li>নিয়োগের প্রয়োজন অনুযায়ী যোগাযোগের সুবিধা</li>
-        </ul>
+    <section id="jobs"><div class="wrap">
+      <div class="section-head"><div><div class="kicker">Latest opportunities</div><h2>সর্বশেষ চাকরির বিজ্ঞপ্তি</h2><p>পদের নাম বা কর্মস্থল লিখে বিজ্ঞপ্তি খুঁজুন।</p></div></div>
+      <div class="filterbar"><input id="jobSearch" placeholder="যেমন: সেলস, অফিস, ঢাকা" aria-label="চাকরির বিজ্ঞপ্তি ফিল্টার"><select id="locationFilter" aria-label="কর্মস্থল বাছুন"><option value="">সব কর্মস্থল</option><option>ঢাকা</option><option>চট্টগ্রাম</option><option>সারা বাংলাদেশ</option></select></div>
+      <div class="jobs" id="jobsList"></div>
+      <p class="notice">নমুনা বিজ্ঞপ্তিগুলো ডিজাইন দেখানোর জন্য। প্রকৃত চাকরির তথ্য, বেতন, শেষ তারিখ ও আবেদন লিংক যাচাই করে যোগ করুন।</p>
+    </div></section>
+    <section id="categories" style="background:#fff"><div class="wrap">
+      <div class="section-head"><div><div class="kicker">Explore categories</div><h2>চাকরির বিভাগ</h2><p>আপনার আগ্রহ অনুযায়ী বিভাগ বেছে নিন।</p></div></div>
+      <div class="categories">
+        <a class="category" href="#jobs" data-category="অফিস"><div class="emoji">▤</div><h3>অফিস ও প্রশাসন</h3><p>অফিস সহায়তা ও প্রশাসনিক কাজ</p></a>
+        <a class="category" href="#jobs" data-category="সেলস"><div class="emoji">◈</div><h3>সেলস ও শোরুম</h3><p>বিক্রয়, কাস্টমার সার্ভিস ও শোরুম</p></a>
+        <a class="category" href="#jobs" data-category="আইটি"><div class="emoji">⌘</div><h3>আইটি ও ডিজিটাল</h3><p>প্রযুক্তি ও অনলাইনভিত্তিক কাজ</p></a>
+        <a class="category" href="#jobs" data-category="অন্যান্য"><div class="emoji">✦</div><h3>অন্যান্য চাকরি</h3><p>বিভিন্ন ক্ষেত্রের নতুন সুযোগ</p></a>
       </div>
-      <div class="contact-box" id="contact">
-        <h3>যোগাযোগ করুন</h3>
-        <p>চাকরির বিজ্ঞপ্তি সম্পর্কে জানতে বা আবেদন করতে WhatsApp-এ যোগাযোগ করুন।</p>
-        <a class="btn btn-green" id="contactBtn" href="#" target="_blank" rel="noopener">
-          WhatsApp-এ যোগাযোগ
-        </a>
-        <p style="font-size:12px;margin-top:15px">
-          যোগাযোগের নম্বর ও বিজ্ঞপ্তির তথ্য প্রকাশের আগে যাচাই করে নিন।
-        </p>
+    </div></section>
+    <section id="how" class="how"><div class="wrap">
+      <div class="section-head"><div><div class="kicker">How to apply</div><h2>আবেদন করবেন যেভাবে</h2><p>আবেদন করার আগে বিজ্ঞপ্তির তথ্য ভালোভাবে পড়ুন।</p></div></div>
+      <div class="steps">
+        <div class="step"><div class="step-no">১</div><h3>বিজ্ঞপ্তি বাছুন</h3><p>পদের নাম, যোগ্যতা, কর্মস্থল ও বেতনের তথ্য পড়ুন।</p></div>
+        <div class="step"><div class="step-no">২</div><h3>শর্ত যাচাই করুন</h3><p>আবেদনের শেষ তারিখ ও প্রয়োজনীয় কাগজপত্র মিলিয়ে নিন।</p></div>
+        <div class="step"><div class="step-no">৩</div><h3>আবেদন জমা দিন</h3><p>বিজ্ঞপ্তিতে দেওয়া অফিসিয়াল লিংক বা যোগাযোগের মাধ্যমে আবেদন করুন।</p></div>
       </div>
+    </div></section>
+    <section><div class="wrap"><div class="banner"><div><h2>আপনার পরবর্তী সুযোগ খুঁজছেন?</h2><p>সর্বশেষ বিজ্ঞপ্তি দেখুন এবং নিজের যোগ্যতা অনুযায়ী আবেদন করুন।</p></div><a href="#jobs">চাকরি দেখুন ↗</a></div></section>
+  </main>
+  <footer><div class="wrap">
+    <div class="footer-grid">
+      <div><div class="footer-brand">BLUE BIRD ULTRA PRIVATE LIMITED</div><p>চাকরিপ্রার্থীদের জন্য চাকরির বিজ্ঞপ্তি ও আবেদনসংক্রান্ত তথ্য সহজভাবে তুলে ধরার একটি পোর্টাল।</p></div>
+      <div><h3>দ্রুত লিংক</h3><div class="footer-links"><a href="#jobs">সর্বশেষ বিজ্ঞপ্তি</a><a href="#categories">চাকরির বিভাগ</a><a href="#how">আবেদনের নিয়ম</a></div></div>
+      <div><h3>সতর্কতা</h3><p>আবেদনের আগে প্রতিষ্ঠানের পরিচয় ও বিজ্ঞপ্তির সত্যতা যাচাই করুন। চাকরি দেওয়ার নামে অগ্রিম টাকা চাইলে সতর্ক থাকুন।</p></div>
     </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <div>
-      <strong>BLUE BIRD ULTRA PRIVATE LIMITED</strong>
-      <p>Recruitment • Manpower • Security</p>
-    </div>
-    <p>© <span id="year"></span> Blue Bird Ultra Private Limited</p>
-  </div>
-</footer>
-
-<script>
-  // নমুনা চাকরির তথ্য: প্রকৃত বিজ্ঞপ্তি দিয়ে পরিবর্তন করুন।
-  const jobs = [
-    {
-      id: 1,
-      title: "শোরুম কর্মী",
-      category: "শোরুম",
-      salary: "তথ্য নিশ্চিত করুন",
-      duty: "তথ্য নিশ্চিত করুন",
-      location: "ঢাকা",
-      requirements: "নিয়োগদাতার নির্ধারিত যোগ্যতা প্রযোজ্য।",
-      description: "এটি একটি নমুনা বিজ্ঞপ্তি। আবেদন করার আগে পদ, বেতন, ডিউটি ও নিয়োগের শর্ত নিশ্চিত করুন।"
-    },
-    {
-      id: 2,
-      title: "সিকিউরিটি কর্মী",
-      category: "সিকিউরিটি",
-      salary: "তথ্য নিশ্চিত করুন",
-      duty: "তথ্য নিশ্চিত করুন",
-      location: "ঢাকা",
-      requirements: "নিয়োগদাতার নির্ধারিত যোগ্যতা প্রযোজ্য।",
-      description: "এটি একটি নমুনা বিজ্ঞপ্তি। প্রকৃত নিয়োগের তথ্য নিশ্চিত না করে আবেদন করবেন না।"
-    },
-    {
-      id: 3,
-      title: "সুপার শপ কর্মী",
-      category: "সুপার শপ",
-      salary: "তথ্য নিশ্চিত করুন",
-      duty: "তথ্য নিশ্চিত করুন",
-      location: "ঢাকা",
-      requirements: "নিয়োগদাতার নির্ধারিত যোগ্যতা প্রযোজ্য।",
-      description: "এটি একটি নমুনা বিজ্ঞপ্তি। আবেদন করার আগে কর্মস্থল ও চাকরির শর্ত যাচাই করুন।"
+    <div class="copyright"><span>© <span id="year"></span> Blue Bird Ultra Private Limited</span><span>সকল অধিকার সংরক্ষিত</span></div>
+  </div></footer>
+  <script>
+    // ডিজাইন দেখানোর জন্য নমুনা ডেটা। প্রকৃত বিজ্ঞপ্তি যোগ করার আগে এই অংশ সম্পাদনা করুন।
+    const sampleJobs = [
+      {title:"শোরুম সেলস এক্সিকিউটিভ",company:"প্রতিষ্ঠানের নাম যোগ করুন",location:"ঢাকা",salary:"বিজ্ঞপ্তি অনুযায়ী",description:"গ্রাহকসেবা, পণ্য প্রদর্শন এবং বিক্রয়সংক্রান্ত দায়িত্ব।",deadline:"তারিখ যোগ করুন",url:"",category:"সেলস"},
+      {title:"অফিস সহকারী",company:"প্রতিষ্ঠানের নাম যোগ করুন",location:"সারা বাংলাদেশ",salary:"বিজ্ঞপ্তি অনুযায়ী",description:"দৈনন্দিন অফিসের কাজে সহায়তা এবং নথিপত্র ব্যবস্থাপনা।",deadline:"তারিখ যোগ করুন",url:"",category:"অফিস"},
+      {title:"কাস্টমার সার্ভিস প্রতিনিধি",company:"প্রতিষ্ঠানের নাম যোগ করুন",location:"চট্টগ্রাম",salary:"বিজ্ঞপ্তি অনুযায়ী",description:"গ্রাহকের প্রশ্নের উত্তর দেওয়া এবং প্রয়োজনীয় তথ্য প্রদান।",deadline:"তারিখ যোগ করুন",url:"",category:"সেলস"},
+      {title:"ডিজিটাল মার্কেটিং সহকারী",company:"প্রতিষ্ঠানের নাম যোগ করুন",location:"ঢাকা",salary:"বিজ্ঞপ্তি অনুযায়ী",description:"অনলাইন প্রচার, কনটেন্ট এবং সামাজিক যোগাযোগমাধ্যমের কাজে সহায়তা।",deadline:"তারিখ যোগ করুন",url:"",category:"আইটি"}
+    ];
+    const list = document.getElementById('jobsList');
+    const search = document.getElementById('jobSearch');
+    const loc = document.getElementById('locationFilter');
+    let category = '';
+    function renderJobs(){
+      const q = search.value.trim().toLowerCase();
+      const location = loc.value;
+      const filtered = sampleJobs.filter(j => {
+        const text = [j.title,j.company,j.location,j.description,j.category].join(' ').toLowerCase();
+        return (!q || text.includes(q)) && (!location || j.location===location) && (!category || j.category===category);
+      });
+      if(!filtered.length){list.innerHTML='<div class="empty">কোনো বিজ্ঞপ্তি পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজে দেখুন।</div>';return;}
+      list.innerHTML=filtered.map(j=>`<article class="job">
+        <div class="job-top"><div class="company-mark">B</div><div><h3>${escapeHtml(j.title)}</h3><div class="company">${escapeHtml(j.company)}</div></div><span class="newtag">চাকরি</span></div>
+        <p class="job-desc">${escapeHtml(j.description)}</p>
+        <div class="job-meta"><span>⌖ ${escapeHtml(j.location)}</span><span>৳ ${escapeHtml(j.salary)}</span></div>
+        <div class="job-bottom"><span class="deadline">শেষ তারিখ: ${escapeHtml(j.deadline)}</span>${j.url?`<a class="apply" href="${escapeAttr(j.url)}" target="_blank" rel="noopener noreferrer">আবেদন করুন ↗</a>`:'<span class="apply" style="opacity:.65;cursor:default">লিংক যোগ করা হয়নি</span>'}</div>
+      </article>`).join('');
     }
-  ];
-
-  // আপনার দেওয়া Worker ফাইলে থাকা যোগাযোগ নম্বর।
-  const WHATSAPP_NUMBER = "8801978285591";
-
-  const jobGrid = document.getElementById("jobGrid");
-  const searchInput = document.getElementById("searchInput");
-  const categoryFilter = document.getElementById("categoryFilter");
-  const emptyState = document.getElementById("emptyState");
-
-  function whatsappLink(job) {
-    const message =
-      `আসসালামু আলাইকুম, Blue Bird Ultra Private Limited-এর "${job.title}" পদের বিষয়ে জানতে চাই। অনুগ্রহ করে প্রকৃত বেতন, ডিউটি, কর্মস্থল ও আবেদনের নিয়ম জানাবেন।`;
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  }
-
-  function renderJobs() {
-    const query = searchInput.value.trim().toLowerCase();
-    const category = categoryFilter.value;
-
-    const filtered = jobs.filter(job =>
-      `${job.title} ${job.location} ${job.category}`.toLowerCase().includes(query) &&
-      (!category || job.category === category)
-    );
-
-    jobGrid.innerHTML = filtered.map(job => `
-      <article class="job-card">
-        <div class="job-top">
-          <h3>${job.title}</h3>
-          <span class="tag">${job.category}</span>
-        </div>
-        <div class="job-meta">
-          <div>বেতন: ${job.salary}</div>
-          <div>ডিউটি: ${job.duty}</div>
-          <div>কর্মস্থল: ${job.location}</div>
-        </div>
-        <p><strong>যোগ্যতা:</strong> ${job.requirements}</p>
-        <details>
-          <summary style="cursor:pointer;color:#1769d2;font-weight:700">
-            বিস্তারিত ও আবেদনের নিয়ম
-          </summary>
-          <p>${job.description}</p>
-        </details>
-        <div class="job-actions">
-          <a class="btn btn-green" href="${whatsappLink(job)}"
-             target="_blank" rel="noopener">WhatsApp-এ আবেদন</a>
-        </div>
-      </article>
-    `).join("");
-
-    emptyState.style.display = filtered.length ? "none" : "block";
-  }
-
-  searchInput.addEventListener("input", renderJobs);
-  categoryFilter.addEventListener("change", renderJobs);
-
-  document.getElementById("contactBtn").href =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-      "আসসালামু আলাইকুম, Blue Bird Ultra Private Limited-এর চাকরি সম্পর্কে জানতে চাই।"
-    )}`;
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  document.getElementById("menuBtn").addEventListener("click", () => {
-    document.getElementById("navLinks").classList.toggle("open");
-  });
-
-  document.querySelectorAll("#navLinks a").forEach(link => {
-    link.addEventListener("click", () => {
-      document.getElementById("navLinks").classList.remove("open");
-    });
-  });
-
-  renderJobs();
-</script>
+    function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+    function escapeAttr(s){return escapeHtml(s);}
+    search.addEventListener('input',renderJobs);loc.addEventListener('change',renderJobs);
+    document.getElementById('heroSearch').addEventListener('submit',e=>{e.preventDefault();search.value=document.getElementById('heroQuery').value;renderJobs();document.getElementById('jobs').scrollIntoView({behavior:'smooth'});});
+    document.querySelectorAll('[data-category]').forEach(a=>a.addEventListener('click',()=>{category=a.dataset.category;search.value='';loc.value='';renderJobs();}));
+    document.getElementById('year').textContent=new Date().getFullYear();renderJobs();
+  </script>
 </body>
 </html>
